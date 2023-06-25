@@ -26,14 +26,14 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: end;
-
+        margin: 0.8em;
         button {
             box-sizing: border-box;
             padding: 0.4em;
             box-shadow: none;
             width: 2.5em;
             height: 2.5em;
-            margin: 0.3em;
+            margin: 0.8em;
             border: none;
             border-radius: 40%;
             background-color: rgba(255, 255, 255, 0.574);
@@ -103,7 +103,7 @@ body {
     }
     .description {
         display: grid;
-        grid: 1fr/1fr 1fr;
+        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
         background-color: white;
 
         img {
@@ -116,13 +116,13 @@ body {
             color: rgba(0, 0, 0, 0.849);
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             line-height: 1.5em;
-            margin: 2em 7em;
+            margin: 2em Max(15vw, 7em);
         }
     }
 
     .barbershops {
         display: grid;
-        grid: 70vh/1fr 1fr;
+        grid: 1fr / repeat(2, Minmax(0, 1fr));
         background-color: white;
 
         img {
@@ -140,7 +140,7 @@ body {
 
             .information {
                 display: grid;
-                grid: 1fr/1fr 1fr 1fr;
+                grid: 1fr / repeat(3, Minmax(0, 1fr));
                 background-color: $button-color-darker;
                 color: rgb(255, 255, 255);
                 padding: 2px;
