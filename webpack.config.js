@@ -5,7 +5,7 @@ const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -19,19 +19,33 @@ const config = {
       },
       {
         test: /\.svg$/,
-        use: 'file-loader'
+        use: 'file-loader',
+        type: 'asset/inline'
       },
       {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
+        test: /\.html$/i,
+        use: 'html-loader'
+      },
+      {
+        test: /\.(png|jpg)$/i,
+        type: 'asset',
+        use: [{
+            loader: 'image-webpack-loader',
             options: {
-              mimetype: 'image/png'
+                pngquant: {
+                    quality: [.90, .95],
+                },
             }
-          }
-        ]
-      }
+        }],
+        parser: {
+            dataUrlCondition: {
+                maxSize: 10 * 1024 // 10kb
+            }
+        },
+        generator: {
+            filename: 'images/[name]-[hash][ext]'
+        }
+    }
     ]
   }
 };
