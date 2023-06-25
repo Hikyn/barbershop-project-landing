@@ -1,53 +1,35 @@
-const webpack = require('webpack');
 const path = require('path');
 
-const config = {
+module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
+    clean: true
   },
-  module: {
-    rules: [
-      {
+ devtool: 'inline-source-map',
+ module: {
+   rules: [
+    {
         test: /\.scss$/,
         use: [
           'style-loader',
           'css-loader',
           'sass-loader'
         ]
-      },
-      {
-        test: /\.svg$/,
-        use: 'file-loader',
-        type: 'asset/inline'
-      },
-      {
-        test: /\.html$/i,
-        use: 'html-loader'
-      },
-      {
-        test: /\.(png|jpg)$/i,
-        type: 'asset',
-        use: [{
-            loader: 'image-webpack-loader',
-            options: {
-                pngquant: {
-                    quality: [.90, .95],
-                },
-            }
-        }],
-        parser: {
-            dataUrlCondition: {
-                maxSize: 10 * 1024 // 10kb
-            }
-        },
+    },
+    {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+    },
+    {
+        test: /\.html/,
+        type: 'asset/resource',
         generator: {
-            filename: 'images/[name]-[hash][ext]'
+          filename: 'static/[hash][ext][query]'
         }
     }
-    ]
-  }
+   ]
+ },
 };
-
-module.exports = config;
