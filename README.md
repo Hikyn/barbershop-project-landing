@@ -24,3 +24,68 @@ It is part of a [barbershop project](https://github.com/Hikyn/barbershop-project
 1. Mobile-friendly interface
 2. Lazy-loading
 3. [Accessibility](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG2, proper markup, light and dark theme, meta-data, readable at 400% magnification)
+
+## Problems and their solutions:
+### Webpack asset management
+**Problem**: images were not loading, index.html did not copy from **src** to **dist**. It had to be already present.
+
+**Solution**:
+
+#### 1. Static html
+
+From tinkering with webpack I understood several principles. I can add src/index.html file to webpack with following settings:
+```js
+{
+  test: /\.html/,
+  type: 'asset/resource',
+  generator: {
+    filename: 'static/[hash][ext][query]'
+  }
+}
+```
+But I also need to **include html** in my index.js file using `file-loader`.
+```js
+require('file-loader?name=[name].[ext]!./index.html')
+```
+
+#### 2. Images
+
+It is **almost the same** for images. We target them in webpack config:
+```js
+{
+  test: /\.(png|svg|jpg|jpeg|gif)$/i,
+  type: 'asset/resource',
+}
+```
+
+And include in index.js:
+```js
+import mainImage from './images/barbershop.png';
+```
+
+But images **will be obsuficated** like this:
+```txt
+7a19015e70544b1c42eb.svg
+23bbc361852ca0746784.png
+```
+We need to write generator so they will be name like in src folder:
+
+webpack.config.js
+```diff
+{
+  test: /\.(png|jpg)$/i,
+  type: 'asset/resource',
++  generator: {
++     filename: 'images/[name][ext]'
++ }
+}
+```
+
+dist/images/
+```diff
+- 7a19015e70544b1c42eb.svg
+- 23bbc361852ca0746784.png
++ barbershop.png
++ facebookIcon.svg
+```
+
