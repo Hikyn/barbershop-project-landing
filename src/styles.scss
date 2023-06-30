@@ -2,7 +2,11 @@ $button-color: rgb(248, 202, 145);
 $button-color-darker: rgb(201, 164, 120);
 
 $text-color-on-dark-bg: white;
+$text-color-on-light-bg: black;
+$text-color-on-light-bg-transparent: rgba(0, 0, 0, 0.849);
+
 $background-color-light: white;
+$background-color-dark: black;
 $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
@@ -14,17 +18,6 @@ html {
 
 body {
     margin: 0px;
-}
-
-footer {
-    /* Stylings for bottom-most part of website */
-    color: $text-color-on-dark-bg;
-    background-color: black;
-
-    display: flex;
-    justify-content: space-between;
-    
-    padding: 0px 1em;
 }
 
 /* General classes */
@@ -66,6 +59,7 @@ footer {
     margin: 0px;
 }
 
+/* Full size dimmed photo */
 .full-screen {
     height: 100vh;
 
@@ -110,6 +104,7 @@ footer {
     }
 }
 
+/* Welcome message on a full size photo */
 .welcome {
     margin: auto;
     width: Max(25vw, 15em);
@@ -143,6 +138,8 @@ footer {
         }
     }
 }
+
+/* Lines between each section */
 .section-line {
     background-color: $button-color;
 
@@ -150,13 +147,14 @@ footer {
     width: 100%;
 }
 
+/* Big header with a section name */
 .section-announce {
     background-color: $background-color-light;
 
     height: 6em;
 
     h2 {
-        color: black;
+        color: $text-color-on-light-bg;
 
         font-size: 2em;
         text-align: center;
@@ -179,6 +177,8 @@ footer {
         }
     }
 }
+
+/* History of the barbershop section */
 .description {
     background-color: $background-color-light;
 
@@ -200,7 +200,7 @@ footer {
     }
 
     .history {
-        color: rgba(0, 0, 0, 0.849);
+        color: $text-color-on-light-bg-transparent;
 
         line-height: 1.5em;
         
@@ -208,6 +208,7 @@ footer {
     }
 }
 
+/* Optional sidebar when pressed on 3 dots at the top of the page */
 .sidebar {
     position: fixed;
 
@@ -229,7 +230,7 @@ footer {
         width: 100%;
 
         button {
-            background-color: white;
+            background-color: $background-color-light;
 
             border: 0px;
 
@@ -254,6 +255,7 @@ footer {
     }
 }
 
+/* Barbershop location section */
 .barbershops {
     background-color: $background-color-light;
 
@@ -278,7 +280,7 @@ footer {
     }
 
     .contact {
-        color: rgba(0, 0, 0, 0.849);
+        color: $text-color-on-light-bg-transparent;
 
         display: grid;
 
@@ -327,6 +329,7 @@ footer {
     }
 }
 
+/* Price list section */
 .pricelist {
     background-color: $background-color-light;
 
@@ -348,7 +351,7 @@ footer {
     }
 
     .prices {
-        color: rgba(0, 0, 0, 0.849);
+        color: $text-color-on-light-bg-transparent;
         
         justify-content: space-around;
 
@@ -371,30 +374,7 @@ footer {
     }
 }
 
-.follow-us {
-    background-color: black;
-
-    gap: 1em;
-
-    padding-top: 3em;
-    padding-bottom: 3em;
-
-    div:first-child {
-        font-size: 2.5em;
-    }
-
-    button {
-        margin-top: 1em;
-        width: 3em;
-        height: 3em;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-
+/* Second prompt to book before end of the page */
 .book-prompt {
     background-color: $background-color-light;
 
@@ -421,4 +401,40 @@ footer {
             background-color: $button-color-darker;
         }
     }
+}
+
+/* Contact information section */
+.follow-us {
+    background-color: $background-color-dark;
+
+    gap: 1em;
+
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    div:first-child {
+        font-size: 2.5em;
+    }
+
+    button {
+        margin-top: 1em;
+        width: 3em;
+        height: 3em;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* Stylings for bottom-most part of website */
+footer {
+    color: $text-color-on-dark-bg;
+    background-color: $background-color-dark;
+
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0px 1em;
 }
