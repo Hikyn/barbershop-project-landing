@@ -284,7 +284,7 @@ body {
 
 /* Barbershop location section */
 .barbershops {
-    background-color: $background-color-light;
+    background-color: #554a3d;
 
     display: grid;
 
@@ -320,8 +320,8 @@ body {
         }
 
         .information {
-            color: $text-color-on-dark-bg;;
-            background-color: $button-color-darker;
+            color: $text-color-on-dark-bg;
+            background-color: #554a3d;
 
             display: grid;
             grid: 1fr / repeat(3, 1fr);
