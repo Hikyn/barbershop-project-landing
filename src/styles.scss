@@ -4,227 +4,370 @@ $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0px 1em;
+    background-color: black;
 }
 
 #root {
     margin: 0px;
     background-color: bisque;
     color: white;
+}
 
-    .full-screen {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        background: linear-gradient(
-            rgba(0, 0, 0, 0.7), 
-            rgba(0, 0, 0, 0.7)
-          ), url('./images/barbershop.png');
-        background-size:cover;
-        background-position: center;
+.full-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+        ), url('./images/barbershop.png');
+    background-size:cover;
+    background-position: center;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 0.8em;
+    button {
+        box-sizing: border-box;
+        padding: 0.4em;
+        box-shadow: none;
+        width: 2.5em;
+        height: 2.5em;
+        margin: 0.8em;
+        border: none;
+        border-radius: 40%;
+        background-color: rgba(255, 255, 255, 0.574);
+
+        &:hover {
+            cursor:pointer;
+            background-color: rgba(255, 255, 255, 0.974);
+        }
+        
+        transition: background-color 0.3s ease-in;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.welcome {
+    text-align: center;
+    font-style: italic;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    margin: auto;
+    width: Max(25vw, 15em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+        font-size: 1.1em;
+        font-weight: bold;
+        box-shadow: none;
+        padding: 1em;
+        margin: 0em 2em;
+        background-color: $button-color;
+        border: none;
+        border-radius: 0.4em;
+        font-family: inherit;
+        outline: inherit;
+        transition: background-color 0.1s ease-in;
+        &:hover {
+            cursor:pointer;
+            background-color: $button-color-darker;
+        }
+    }
+}
+.section-line {
+    height: 0.7em;
+    width: 100%;
+    background-color: $button-color;
+}
+
+.section-announce {
+    height: 6em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 2em;
+        margin: 0px;
+        text-align: center;
+        color: black;
     }
 
-    .nav-bar {
+    .icon {
         display: flex;
         flex-direction: row;
-        justify-content: end;
-        margin: 0.8em;
-        button {
-            box-sizing: border-box;
-            padding: 0.4em;
-            box-shadow: none;
-            width: 2.5em;
-            height: 2.5em;
-            margin: 0.8em;
-            border: none;
-            border-radius: 40%;
-            background-color: rgba(255, 255, 255, 0.574);
+        align-items: center;
+        img {
+            padding: 1em;
+            width: 2em;
+            height: 2em;
+        }
 
-            &:hover {
-                cursor:pointer;
-                background-color: rgba(255, 255, 255, 0.974);
-            }
-            
-            transition: background-color 0.3s ease-in;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
+        .line {
+            height: 0.2em;
+            width: 10em;
+            background-color: $button-color;
         }
     }
+}
+.description {
+    display: grid;
 
-    .welcome {
-        text-align: center;
-        font-style: italic;
+    @media (min-width: $mediaBp1Width) {
+        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+    }
+
+    @media (max-width: $mediaMinWidth) {
+        grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+    }
+    
+    background-color: white;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .history {
+        color: rgba(0, 0, 0, 0.849);
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        line-height: 1.7em;
-        margin: auto;
-        width: Max(25vw, 15em);
+        line-height: 1.5em;
+        margin: 2em Max(15vw, 7em);
+    }
+}
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    right: -500px;
+    height: 100vh;
+    width: 20vw;
+
+    display: flex;
+    flex-direction: row;
+
+    .other-btns {
         display: flex;
         flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        width: 100%;
         justify-content: center;
+        gap: 2em;
 
         button {
-            font-size: 1.1em;
-            font-weight: bold;
-            box-shadow: none;
-            padding: 1em;
-            margin: 0em 2em;
-            background-color: $button-color;
-            border: none;
-            border-radius: 0.4em;
-            font-family: inherit;
-            outline: inherit;
-            transition: background-color 0.1s ease-in;
-            &:hover {
-                cursor:pointer;
-                background-color: $button-color-darker;
-            }
-        }
-    }
-    .section-line {
-        height: 0.7em;
-        width: 100%;
-        background-color: $button-color;
-    }
-
-    .section-announce {
-        height: 6em;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h2 {
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: 0px;
+            background-color: white;
             font-size: 2em;
-            margin: 0px;
-            text-align: center;
-            color: black;
-        }
-    }
-    .description {
-        display: grid;
-
-        @media (min-width: $mediaBp1Width) {
-            grid: 1fr/ repeat(2, Minmax(0, 1fr));;
-        }
-
-        @media (max-width: $mediaMinWidth) {
-            grid: repeat(2, Minmax(0, 1fr)) / 1fr;
-        }
-        
-        background-color: white;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .history {
-            color: rgba(0, 0, 0, 0.849);
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            line-height: 1.5em;
-            margin: 2em Max(15vw, 7em);
+            cursor: pointer;
         }
     }
 
-    .barbershops {
+    .btn-close {
+        width: 3em;
+        height: 3em;
+    }
+    
+    transition: all 0.3s;
+    &.view {
+        right: 0;
+    }
+}
+
+.barbershops {
+    display: grid;
+
+    @media (min-width: $mediaBp1Width) {
+        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+    }
+
+    @media (max-width: $mediaBp1Width) {
+        grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+    }
+
+    background-color: white;
+
+    img {
+        @media (max-width: $mediaBp1Width) {
+            grid-row: 1;
+        }
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .contact {
+        color: rgba(0, 0, 0, 0.849);
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
         display: grid;
 
         @media (min-width: $mediaBp1Width) {
-            grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+            grid: 0.5fr 3fr/1fr;
         }
-
-        @media (max-width: $mediaMinWidth) {
-            grid: repeat(2, Minmax(0, 1fr)) / 1fr;
-        }
-
-        background-color: white;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .contact {
-            color: rgba(0, 0, 0, 0.849);
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-            display: grid;
+    
+        @media (max-width: $mediaBp1Width) {
             grid: 0.5fr 1fr/1fr;
+        }
 
-            .information {
-                display: grid;
-                grid: 1fr / repeat(3, Minmax(0, 1fr));
-                background-color: $button-color-darker;
-                color: rgb(255, 255, 255);
-                padding: 2px;
+        .information {
+            display: grid;
+            grid: 1fr / repeat(3, 1fr);
+            background-color: $button-color-darker;
+            color: rgb(255, 255, 255);
+            padding: 2px;
 
-                .address,
-                .phone,
-                .hours {
-                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                    font-size: 0.8em;
-                    border: 1px solid white;
-                    margin: 1em;
-                    padding: 0.5em
-                }
+            .address,
+            .phone,
+            .hours {
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 0.8em;
+                border: 1px solid white;
+                margin: 1em;
+                padding: 0.5em
             }
+        }
 
-            .map {
-                background: linear-gradient(
-                    rgba(0, 0, 0, 0.5), 
-                    rgba(0, 0, 0, 0.5)
-                ), url('./images/map1.png');
-                background-size: cover;
-                background-position: center;
+        .map {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.5), 
+                rgba(0, 0, 0, 0.5)
+            ), url('./images/map1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .map2 {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.5), 
+                rgba(0, 0, 0, 0.5)
+            ), url('./images/map2.png');
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+.pricelist {
+    display: grid;
+
+    @media (min-width: $mediaBp1Width) {
+        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+    }
+
+    @media (max-width: $mediaMinWidth) {
+        grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+    }
+    
+    background-color: white;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prices {
+        color: rgba(0, 0, 0, 0.849);
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        line-height: 1.5em;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .price-row {
+            color: rgba(0, 0, 0, 0.678);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+
+            p {
+                margin: 0px 2em;
             }
         }
     }
+}
 
-    .pricelist {
-        display: grid;
+.follow-us {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-        @media (min-width: $mediaBp1Width) {
-            grid: 1fr/ repeat(2, Minmax(0, 1fr));;
-        }
+    div:first-child {
+        font-size: 2.5em;
+    }
 
-        @media (max-width: $mediaMinWidth) {
-            grid: repeat(2, Minmax(0, 1fr)) / 1fr;
-        }
-        
-        background-color: white;
+    button {
+        margin-top: 1em;
+        width: 3em;
+        height: 3em;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
+    }
+}
 
-        .prices {
-            color: rgba(0, 0, 0, 0.849);
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            line-height: 1.5em;
-            margin: 0px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+.book-prompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: white;
 
-            .price-row {
-                color: rgba(0, 0, 0, 0.678);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.329);
-
-                p {
-                    margin: 0px 2em;
-                }
-            }
+    button {
+        font-size: 1.1em;
+        font-weight: bold;
+        box-shadow: none;
+        padding: 1em;
+        margin: 0em 2em;
+        background-color: $button-color;
+        border: none;
+        border-radius: 0.4em;
+        font-family: inherit;
+        outline: inherit;
+        transition: background-color 0.1s ease-in;
+        &:hover {
+            cursor:pointer;
+            background-color: $button-color-darker;
         }
     }
 }

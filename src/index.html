@@ -17,7 +17,6 @@
                     <button class="instagram-icon">
                         <img src="./images/instagramIcon.svg" alt="Instagram icon"></img>
                     </button>
-                    </button>
                     <button class="sidebar-button">•••</button>
                 </div>
                 <div class="welcome">
@@ -26,8 +25,17 @@
                     <button class="book-btn">BOOK ONLINE</button>
                 </div>
             </div>
+            <div class="sidebar">
+                <button class="btn-close">X</button>
+                <div class="other-btns">
+                    <button onClick="document.getElementById('description').scrollIntoView();">Who we are</button>
+                    <button onClick="document.getElementById('barbershops').scrollIntoView();">Barbershops</button>
+                    <button onClick="document.getElementById('pricelist').scrollIntoView();">Pricelist</button>
+                    <button onClick="document.getElementById('contacts').scrollIntoView();">Contacts</button>
+                </div>
+            </div>
             <div class="section-line"></div>
-            <div class="description">
+            <div class="description" id="description">
                 <img  src="./images/barber-1.png" alt="Barber doing a haircut"></img>
                 <div class="history">
                     <p>Welcome to "Example Barbershop", Athens' premier destination for the discerning man's grooming needs.</p>
@@ -37,12 +45,17 @@
                 </div>
             </div>
             <div class="section-line"></div>
-            <div class="section-announce">
+            <div class="section-announce" id="barbershops">
                 <h2>Our barbershops</h2>
+                <div class="icon">
+                    <div class="line"></div>
+                    <img src="./images/barbershop-scissors.png" alt=""></img>
+                    <div class="line"></div>
+                </div>
             </div>
             <div class="section-line"></div>
             <div class="barbershops">
-                <img src="./images/barbershop-front.png" alt="Front side of a shop"></img>
+                <img src="./images/barbershop-front.png" alt="Front side of a first shop"></img>
                 <div class="contact">
                     <div class="information">
                         <div class="address">
@@ -64,7 +77,30 @@
                 </div>
             </div>
             <div class="section-line"></div>
-            <div class="section-announce">
+            <div class="barbershops">
+                <div class="contact">
+                    <div class="information">
+                        <div class="address">
+                            <b>Address</b>
+                            <p>Parasiou 28, Athina 104 40</p>
+                        </div>
+                        <div class="phone">
+                            <b>Contact</b>
+                            <p>Tel: +30210947 ####</p>
+                        </div>
+                        <div class="hours">
+                            <b>Business Hours</b>
+                            <p>Mon-Fri: 09:00-20:00</p>
+                            <p>Saturday: 09:00-17:00</p>
+                        </div>
+                    </div>
+                    <div class="map2">
+                    </div>
+                </div>
+                <img src="./images/barbershop-front2.png" alt="Front side of a second shop"></img>
+            </div>
+            <div class="section-line"></div>
+            <div class="section-announce" id="pricelist">
                 <h2>Pricelist</h2>
             </div>
             <div class="section-line"></div>
@@ -111,9 +147,30 @@
                         <p>$2</p>
                     </li>
                 </ul>
-                <img  src="./images/barber-2.png" alt="Man sitting in a barbershop chair reading a list"></img>
+                <img src="./images/barber-2.png" alt="Man sitting in a barbershop chair reading a list"></img>
             </div>
             <div class="section-line"></div>
+            <div class="book-prompt">
+                <button class="book-btn">BOOK ONLINE</button>
+            </div>
+            <div class="section-line"></div>
+            <div class="follow-us" id="contacts">
+                <div>Follow us</div>
+                <img src="./images/scissors.png" alt=""></img>
+                <div>Stay up to date via our Facebook, Instagram and Youtube pages.</div>
+                <div class="socials-contacts">
+                    <button class="facebook-icon">
+                        <img src="./images/facebookIcon.svg" alt="Facebook icon"></img>
+                    </button>
+                    <button class="instagram-icon">
+                        <img src="./images/instagramIcon.svg" alt="Instagram icon"></img>
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
+    <footer>
+        <div>©2020 με επιφύλαξη παντός δικαιώματος</div>
+        <div>Email: info@testbarbershop.gr</div>
+    </footer>
 </html>
