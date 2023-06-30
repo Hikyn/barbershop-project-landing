@@ -16,13 +16,16 @@
 </a>
 
 
-This is a landing page for customers. They will be able to view brand information, see pricelist, view barbershop team, check photos/videos and access contact information.
+This is a landing page for customers. They will be able to view brand information, see pricelist, view locations of barbershops on google maps, get contact information and barbershop's socials.
 
 It is part of a [barbershop project](https://github.com/Hikyn/barbershop-project/).
 
 ## Features:
 1. Mobile-friendly interface
-2. [Accessibility](https://www.w3.org/WAI/WCAG21/quickref/)
+2. Fast loading (2.3mb website size)
+3. Engaging visuals
+4. Social media integration
+5. [Accessibility](https://www.w3.org/WAI/WCAG21/quickref/)
 ```diff
 WCAG 2 (Level A) complient
 + w3c checker valid
