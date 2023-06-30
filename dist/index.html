@@ -9,8 +9,8 @@
     <body>
         <script src="bundle.js" defer></script>
         <div id="root">
-            <div class="full-screen">
-                <div class="nav-bar">
+            <div class="full-screen flex-column">
+                <div class="nav-bar flex-row-end">
                     <button class="facebook-icon">
                         <img src="./images/facebookIcon.svg" alt="Facebook icon"></img>
                     </button>
@@ -19,7 +19,7 @@
                     </button>
                     <button class="sidebar-button">•••</button>
                 </div>
-                <div class="welcome">
+                <div class="welcome flex-column-center">
                     <img src="./images/main-logo.png"  alt="Barbershop logo"></img>
                     <p>Barbershop for classic and "new age" men's haircuts as well as straight razor shaves, located in Athens Greece</p>
                     <button class="book-btn">BOOK ONLINE</button>
@@ -27,7 +27,7 @@
             </div>
             <div class="sidebar">
                 <button class="btn-close">X</button>
-                <div class="other-btns">
+                <div class="other-btns flex-column-center">
                     <button onClick="document.getElementById('description').scrollIntoView();">Who we are</button>
                     <button onClick="document.getElementById('barbershops').scrollIntoView();">Barbershops</button>
                     <button onClick="document.getElementById('pricelist').scrollIntoView();">Pricelist</button>
@@ -45,9 +45,9 @@
                 </div>
             </div>
             <div class="section-line"></div>
-            <div class="section-announce" id="barbershops">
+            <div class="section-announce flex-column-center" id="barbershops">
                 <h2>Our barbershops</h2>
-                <div class="icon">
+                <div class="icon flex-row-center">
                     <div class="line"></div>
                     <img src="./images/barbershop-scissors.png" alt=""></img>
                     <div class="line"></div>
@@ -100,49 +100,49 @@
                 <img src="./images/barbershop-front2.png" alt="Front side of a second shop"></img>
             </div>
             <div class="section-line"></div>
-            <div class="section-announce" id="pricelist">
+            <div class="section-announce flex-column-center" id="pricelist">
                 <h2>Pricelist</h2>
             </div>
             <div class="section-line"></div>
             <div class="pricelist">
-                <ul class="prices">
-                    <li class="price-row">
+                <ul class="prices flex-column">
+                    <li class="price-row flex-row-center">
                         <p>CLASSIC CUT</p>
                         <p>$14</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>SKIN FADE</p>
                         <p>$15</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>BEARD TRIM</p>
                         <p>$7</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>BEARD TRIM DELUXE</p>
                         <p>$14</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>CLASSIC CUT & BEARD TRIM</p>
                         <p>$18</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>SKIN FADE & BEARD TRIM</p>
                         <p>$20</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>JUNIOR CUT</p>
                         <p>$12</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>HOT TOWEL STRAIGHT RAZOR HSAVE</p>
                         <p>$15</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>FACE SPA</p>
                         <p>$15</p>
                     </li>
-                    <li class="price-row">
+                    <li class="price-row flex-row-center">
                         <p>HEAD WASH</p>
                         <p>$2</p>
                     </li>
@@ -150,11 +150,11 @@
                 <img src="./images/barber-2.png" alt="Man sitting in a barbershop chair reading a list"></img>
             </div>
             <div class="section-line"></div>
-            <div class="book-prompt">
+            <div class="book-prompt flex-row-center">
                 <button class="book-btn">BOOK ONLINE</button>
             </div>
             <div class="section-line"></div>
-            <div class="follow-us" id="contacts">
+            <div class="follow-us flex-column-center" id="contacts">
                 <div>Follow us</div>
                 <img src="./images/scissors.png" alt=""></img>
                 <div>Stay up to date via our Facebook, Instagram and Youtube pages.</div>
