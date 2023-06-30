@@ -14,6 +14,11 @@ $mediaMinWidth: 480px;
 html {
     scroll-behavior: smooth;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    ul, li { margin-left: 0; padding-left: 0; }
+    hr { 
+        margin: 0em;
+        border-width: 0px;
+      } 
 }
 
 body {
@@ -106,6 +111,8 @@ body {
 
 /* Welcome message on a full size photo */
 .welcome {
+    color: $text-color-on-dark-bg;
+
     margin: auto;
     width: Max(25vw, 15em);
 
@@ -136,6 +143,10 @@ body {
             background-color: $button-color-darker;
             cursor:pointer;
         }
+
+        &:focus {
+            border: 2px solid blue;
+        }
     }
 }
 
@@ -153,7 +164,7 @@ body {
 
     height: 6em;
 
-    h2 {
+    h1 {
         color: $text-color-on-light-bg;
 
         font-size: 2em;
@@ -235,7 +246,7 @@ body {
             border: 0px;
 
             font-size: 2em;
-            
+
             cursor: pointer;
         }
     }
@@ -344,10 +355,20 @@ body {
     }
     
 
+    h2 {
+        font-size: 1.3em;
+    }
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    tbody {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .prices {
@@ -357,7 +378,7 @@ body {
 
         line-height: 1.5em;
 
-        margin: 0px;
+        margin: 0px 2em;
 
         .price-row {
             color: rgba(0, 0, 0, 0.678);
@@ -397,8 +418,12 @@ body {
 
         transition: background-color 0.1s ease-in;
         &:hover {
-            cursor:pointer;
             background-color: $button-color-darker;
+            cursor:pointer;
+        }
+
+        &:focus {
+            border: 2px solid blue;
         }
     }
 }
