@@ -1,5 +1,8 @@
 $button-color: rgb(248, 202, 145);
 $button-color-darker: rgb(201, 164, 120);
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
 
 body {
     margin: 0px;
@@ -103,7 +106,15 @@ body {
     }
     .description {
         display: grid;
-        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+
+        @media (min-width: $mediaBp1Width) {
+            grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+        }
+
+        @media (max-width: $mediaMinWidth) {
+            grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+        }
+        
         background-color: white;
 
         img {
@@ -122,7 +133,15 @@ body {
 
     .barbershops {
         display: grid;
-        grid: 1fr / repeat(2, Minmax(0, 1fr));
+
+        @media (min-width: $mediaBp1Width) {
+            grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+        }
+
+        @media (max-width: $mediaMinWidth) {
+            grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+        }
+
         background-color: white;
 
         img {
