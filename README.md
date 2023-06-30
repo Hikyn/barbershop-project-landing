@@ -16,7 +16,7 @@
 </a>
 
 
-This is a landing page for customers. They will be able to view brand information, see pricelist, view locations of barbershops on google maps, get contact information and barbershop's socials.
+This is a landing page for customers. They are able to view brand information, see pricelist, view locations of barbershops on google maps, get contact information and barbershop's socials.
 
 It is part of a [barbershop project](https://github.com/Hikyn/barbershop-project/).
 
