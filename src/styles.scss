@@ -244,9 +244,9 @@ body {
     gap: 1em;
 
     top: 0;
-    right: -500px;
+    right: -100vw;
     height: 100vh;
-    width: 20vw;
+    min-width: 20vw;
 
     .other-btns {
         background-color: $background-color-light;
