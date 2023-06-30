@@ -22,8 +22,20 @@ It is part of a [barbershop project](https://github.com/Hikyn/barbershop-project
 
 ## Features:
 1. Mobile-friendly interface
-2. Lazy-loading
-3. [Accessibility](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG2, proper markup, light and dark theme, meta-data, readable at 400% magnification)
+2. [Accessibility](https://www.w3.org/WAI/WCAG21/quickref/)
+```diff
+WCAG 2 (Level A) complient
++ w3c checker valid
++ Non-text content have alternative text
++ Semantic markup
++ Tables
++ Meaningful reading/navigation/tabbing order
++ Visible focus
++ Portrait/landscape orientation
++ Contrast ratio > 8.63
++ Readable at 400% magnification
++ Readable at 320px width
+```
 
 ## Problems and their solutions:
 ### Webpack asset management
