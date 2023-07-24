@@ -15,6 +15,17 @@
   <img src="https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black" />
 </a>
 
+<details>
+<summary>Mobile version</summary>
+<br>
+<img src="src/images/preview.gif " height="500"/>
+</details>
+
+<details>
+<summary>Desktop version</summary>
+<br>
+<img src="src/images/previewDesktop.gif " height="500"/>
+</details>
 
 This is a landing page for customers. They are able to view brand information, see pricelist, view locations of barbershops on google maps, get contact information and barbershop's socials.
 
