@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example barbershop</title>
+        <meta name="description" content="Get the best haircut of your life. Open Monday-Friday 8-5pm, located in the Ambelokipi."> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script src="bundle.js" defer></script>
+        <header class="full-screen flex-column">
+            <div class="nav-bar flex-row-end">
+                <ul class="flex-row">
+                    <li><button class="facebook-icon">
+                            <img src="./images/facebookIcon.svg" alt="Barbershop facebook link">
+                    </button></li>
+
+                    <li><button class="instagram-icon">
+                        <img src="./images/instagramIcon.svg" alt="Barbershop instagram link">
+                    </button></li>
+                    <li><button class="sidebar-button">•••</button></li>
+                </ul>
+            </div>
+            <div class="welcome flex-column-center">
+                <img src="./images/main-logo.png"  alt="">
+                <p>Barbershop for classic and "new age" men's haircuts as well as straight razor shaves, located in Athens Greece</p>
+                <button class="book-btn">BOOK ONLINE</button>
+            </div>
+        </header>
+        <main id="root">
+            <nav class="sidebar">
+                <button tabindex="-1" class="btn-close">X</button>
+                    <ul class="other-btns flex-column-center">
+                        <li><button tabindex="-1" onClick="document.getElementById('description').scrollIntoView();">Who we are</button></li>
+                        <li><button tabindex="-1" onClick="document.getElementById('barbershops').scrollIntoView();">Barbershops</button></li>
+                        <li><button tabindex="-1" onClick="document.getElementById('pricelist').scrollIntoView();">Pricelist</button></li>
+                        <li><button tabindex="-1" onClick="document.getElementById('contacts').scrollIntoView();">Contacts</button></li>
+                    </ul>
+            </nav>
+            <hr class="section-line">
+            <div tabindex="0" class="section-announce flex-column-center" id="description">
+                <h1>History</h1>
+            </div>
+            <hr class="section-line">
+            <div tabindex="0" class="description">
+                <img  src="./images/barber-1.png" alt="">
+                <div class="history">
+                    <p>Welcome to "Example Barbershop", Athens' premier destination for the discerning man's grooming needs.</p>
+                    <p>Nestled in the heart of this vibrant city, our barbershop combines the timeless art of traditional barbering with a modern touch. </p>
+                    <p>Step into our stylish space and experience the epitome of luxury and relaxation.</p>
+                    <p>Our barbershop is more than just a place for a trim—it's a haven where men can unwind and rejuvenate.</p>
+                </div>
+            </div>
+            <hr class="section-line">
+            <div tabindex="0" class="section-announce flex-column-center" id="barbershops">
+                <h1>Our barbershops</h1>
+                <div class="icon flex-row-center">
+                    <div class="line"></div>
+                    <img src="./images/barbershop-scissors.png" alt="">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <hr class="section-line">
+            <div tabindex="0" class="barbershops">
+                <img src="./images/barbershop-front.png" alt="">
+                <div class="contact">
+                    <div class="information">
+                        <div class="address">
+                            <b>Address</b>
+                            <p>Ippokratous, Athina 106 79, Greece</p>
+                        </div>
+                        <div class="phone">
+                            <b>Contact</b>
+                            <p>Tel: +30210645 ####</p>
+                        </div>
+                        <div class="hours">
+                            <b>Business Hours</b>
+                            <p>Mon-Fri: 09:00-20:00</p>
+                            <p>Saturday: 09:00-17:00</p>
+                        </div>
+                    </div>
+                    <a class="map" title="Link to google maps for barbershop at Ippokratous" href="https://www.google.com/maps/place/Ippokratous,+Athina+106+79/@37.982691,23.7328633,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd49e641b831:0x8c31e4ff66840e31!8m2!3d37.9826868!4d23.7354382!16s%2Fg%2F1vq89jk4?entry=ttu">
+                    </a>
+                </div>
+            </div>
+            <hr class="section-line">
+            <div tabindex="0" class="barbershops">
+                <div class="contact">
+                    <div class="information">
+                        <div class="address">
+                            <b>Address</b>
+                            <p>Parasiou 28, Athina 104 40</p>
+                        </div>
+                        <div class="phone">
+                            <b>Contact</b>
+                            <p>Tel: +30210947 ####</p>
+                        </div>
+                        <div class="hours">
+                            <b>Business Hours</b>
+                            <p>Mon-Fri: 09:00-20:00</p>
+                            <p>Saturday: 09:00-17:00</p>
+                        </div>
+                    </div>
+                    <a class="map2" title="Link to google maps for barbershop at Parasiou 28" href="https://www.google.com/maps/place/Parasiou+28,+Athina+104+40/@37.9955938,23.7216368,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1a2d323d726af:0x7c5513fe4427e66c!8m2!3d37.9955896!4d23.7242117!16s%2Fg%2F11c2hpszvq?entry=ttu">
+                    </a>
+                    
+                </div>
+                <img src="./images/barbershop-front2.png" alt="">
+            </div>
+            <hr class="section-line">
+            <div tabindex="0" class="section-announce flex-column-center" id="pricelist">
+                <h1>Pricelist</h1>
+            </div>
+            <hr class="section-line">
+            <div class="pricelist">
+                <table class="prices flex-column" tabindex="0">
+                    <caption>Pricelist</caption>
+                    <tr class="price-row flex-row-center">
+                        <th scope="col">Haircut</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>CLASSIC CUT</th>
+                        <td>$14</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>SKIN FADE</th>
+                        <td>$15</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>BEARD TRIM</th>
+                        <td>$7</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>BEARD TRIM DELUXE</th>
+                        <td>$14</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>CLASSIC CUT & BEARD TRIM</th>
+                        <td>$18</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>SKIN FADE & BEARD TRIM</th>
+                        <td>$20</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>JUNIOR CUT</th>
+                        <td>$12</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>HOT TOWEL STRAIGHT RAZOR SHAVE</th>
+                        <td>$15</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>FACE SPA</th>
+                        <td>$15</td>
+                    </tr>
+                    <tr class="price-row flex-row-center">
+                        <th>HEAD WASH</th>
+                        <td>$2</td>
+                    </tr>
+                </table>
+                <img src="./images/barber-2.png" alt="">
+            </div>
+            <hr class="section-line">
+            <div class="book-prompt flex-row-center">
+                <button class="book-btn">BOOK ONLINE</button>
+            </div>
+            <hr class="section-line">
+            <div class="follow-us flex-column-center" id="contacts">
+                <h1>Follow us</h1>
+                <img src="./images/scissors.png" alt="">
+                <div>Stay up to date via our Facebook, Instagram and Youtube pages.</div>
+                <div class="socials-contacts">
+                    <button class="facebook-icon">
+                        <img src="./images/facebookIcon.svg" alt="Facebook icon">
+                    </button>
+                    <button class="instagram-icon">
+                        <img src="./images/instagramIcon.svg" alt="Instagram icon">
+                    </button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>©2020 με επιφύλαξη παντός δικαιώματος</div>
+            <div>Email: info@testbarbershop.gr</div>
+        </footer>
+    </body>
+</html>
