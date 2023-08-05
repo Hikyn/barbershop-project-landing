@@ -19,6 +19,8 @@ import mainLogo from "./images/main-logo.png";
 import facebookIcon from "./images/facebookIcon.svg";
 // eslint-disable-next-line no-unused-vars
 import instagramIcon from "./images/instagramIcon.svg";
+// eslint-disable-next-line no-unused-vars
+import icon from "./images/favicon.ico";
 
 const button = document.querySelector(".sidebar-button");
 const sidebar = document.querySelector(".sidebar");
