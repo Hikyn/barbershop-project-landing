@@ -21,6 +21,8 @@ import facebookIcon from "./images/facebookIcon.svg";
 import instagramIcon from "./images/instagramIcon.svg";
 // eslint-disable-next-line no-unused-vars
 import icon from "./images/favicon.ico";
+// eslint-disable-next-line no-unused-vars
+import scissors from "./images/barbershop-scissors.png";
 
 const button = document.querySelector(".sidebar-button");
 const sidebar = document.querySelector(".sidebar");
