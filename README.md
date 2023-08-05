@@ -32,6 +32,8 @@ This is a landing page for customers. They are able to view brand information, s
 
 It is part of a [barbershop project](https://github.com/Hikyn/barbershop-project/).
 
+<b>View my full portfolio</b>: https://hikyn.dev/
+
 ## Features:
 
 1. Mobile-friendly interface
