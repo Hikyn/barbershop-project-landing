@@ -7,7 +7,6 @@ import map1 from "./images/map1.png";
 import barbershopFront from "./images/barbershop-front.png";
 import barbershopFront2 from "./images/barbershop-front2.png";
 import mainLogo from "./images/main-logo.png";
-import scissors from "./images/barbershop-scissors.png";
 import facebookIcon from "./images/facebookIcon.svg";
 import instagramIcon from "./images/instagramIcon.svg";
 
