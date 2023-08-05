@@ -1,4 +1,5 @@
 # barbershop-project-landing
+
 <a href="https://de.wikipedia.org/wiki/JavaScript">
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=yellow" />
 </a>
@@ -32,11 +33,13 @@ This is a landing page for customers. They are able to view brand information, s
 It is part of a [barbershop project](https://github.com/Hikyn/barbershop-project/).
 
 ## Features:
+
 1. Mobile-friendly interface
 2. Fast loading (2.3mb website size)
 3. Engaging visuals
 4. Social media integration
 5. [Accessibility](https://www.w3.org/WAI/WCAG21/quickref/)
+
 ```diff
 WCAG 2 (Level A) complient
 + w3c checker valid
@@ -52,7 +55,9 @@ WCAG 2 (Level A) complient
 ```
 
 ## Problems and their solutions:
+
 ### Webpack asset management
+
 **Problem**: images were not loading, index.html did not copy from **src** to **dist**. It had to be already present.
 
 **Solution**:
@@ -60,6 +65,7 @@ WCAG 2 (Level A) complient
 #### 1. Static html
 
 From tinkering with webpack I understood several principles. I can add src/index.html file to webpack with following settings:
+
 ```js
 {
   test: /\.html/,
@@ -69,14 +75,17 @@ From tinkering with webpack I understood several principles. I can add src/index
   }
 }
 ```
+
 But I also need to **include html** in my index.js file using `file-loader`.
+
 ```js
-require('file-loader?name=[name].[ext]!./index.html')
+require("file-loader?name=[name].[ext]!./index.html");
 ```
 
 #### 2. Images
 
 It is **almost the same** for images. We target them in webpack config:
+
 ```js
 {
   test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -85,18 +94,22 @@ It is **almost the same** for images. We target them in webpack config:
 ```
 
 And include in index.js:
+
 ```js
-import mainImage from './images/barbershop.png';
+import mainImage from "./images/barbershop.png";
 ```
 
 But images **will be obsuficated** like this:
+
 ```txt
 7a19015e70544b1c42eb.svg
 23bbc361852ca0746784.png
 ```
+
 We need to write generator so they will be name like in src folder:
 
 webpack.config.js
+
 ```diff
 {
   test: /\.(png|jpg)$/i,
@@ -108,10 +121,10 @@ webpack.config.js
 ```
 
 dist/images/
+
 ```diff
 - 7a19015e70544b1c42eb.svg
 - 23bbc361852ca0746784.png
 + barbershop.png
 + facebookIcon.svg
 ```
-

@@ -12,482 +12,475 @@ $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
 html {
-    scroll-behavior: smooth;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    ul, li { 
-        margin-left: 0; 
-        padding-left: 0;
-        list-style-type: none;  
-    }
-    hr { 
-        margin: 0em;
-        border-width: 0px;
-      } 
+  scroll-behavior: smooth;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  ul,
+  li {
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  hr {
+    margin: 0em;
+    border-width: 0px;
+  }
 }
 
 :root {
-    --doc-height: 100%;
+  --doc-height: 100%;
 }
 
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
 /* General classes */
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .flex-row-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
 .flex-column-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-row-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Main content line */
 #root {
-    background-color: bisque;
-    color: $text-color-on-dark-bg;
+  background-color: bisque;
+  color: $text-color-on-dark-bg;
 
-    margin: 0px;
+  margin: 0px;
 }
 
 /* Full size dimmed photo */
 .full-screen {
-    @media (orientation: portrait) {
-        height: 100vh;
-      }
+  @media (orientation: portrait) {
+    height: 100vh;
+  }
 
-    @media (orientation: landscape) {
-        height: 100vh;
-        height: var(--doc-height);
-        padding-bottom: 2em;
-      }
-    
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.7), 
-        rgba(0, 0, 0, 0.7)
-        ), url('./images/barbershop.png');
-    background-size:cover;
-    background-position: center;
+  @media (orientation: landscape) {
+    height: 100vh;
+    height: var(--doc-height);
+    padding-bottom: 2em;
+  }
+
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./images/barbershop.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .nav-bar {
+  margin: 0.8em;
+
+  button {
+    box-sizing: border-box;
+
+    width: 2.5em;
+    height: 2.5em;
     margin: 0.8em;
+    padding: 0.4em;
 
-    button {
-        box-sizing: border-box;
+    box-shadow: none;
 
-        width: 2.5em;
-        height: 2.5em;
-        margin: 0.8em;
-        padding: 0.4em;
+    border: none;
+    border-radius: 40%;
 
-        box-shadow: none;
-        
-        border: none;
-        border-radius: 40%;
+    background-color: rgba(255, 255, 255, 0.574);
 
-        background-color: rgba(255, 255, 255, 0.574);
+    transition: background-color 0.3s ease-in;
 
-        transition: background-color 0.3s ease-in;
+    &:hover {
+      background-color: $background-color-light;
 
-        &:hover {
-            background-color: $background-color-light;
-
-            cursor:pointer;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
+      cursor: pointer;
     }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 /* Welcome message on a full size photo */
 .welcome {
-    color: $text-color-on-dark-bg;
+  color: $text-color-on-dark-bg;
 
-    margin: auto;
-    width: Max(25vw, 15em);
+  margin: auto;
+  width: Max(25vw, 15em);
 
-    text-align: center;
-    font-style: italic;
-    
-    line-height: 1.7em;
+  text-align: center;
+  font-style: italic;
 
-    button {
-        background-color: $button-color;
+  line-height: 1.7em;
 
-        padding: 1em;
-        margin: 0em 2em;
+  button {
+    background-color: $button-color;
 
-        font-size: 1.1em;
-        font-weight: bold;
-        font-family: inherit;
+    padding: 1em;
+    margin: 0em 2em;
 
-        box-shadow: none;
-        
-        border: none;
-        border-radius: 0.4em;
-        outline: inherit;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: inherit;
 
-        transition: background-color 0.1s ease-in;
+    box-shadow: none;
 
-        &:hover {
-            background-color: $button-color-darker;
-            cursor:pointer;
-        }
+    border: none;
+    border-radius: 0.4em;
+    outline: inherit;
 
-        &:focus {
-            border: 2px solid blue;
-        }
+    transition: background-color 0.1s ease-in;
+
+    &:hover {
+      background-color: $button-color-darker;
+      cursor: pointer;
     }
 
-    img {
-        width: 100%;
-        height: 100%;
+    &:focus {
+      border: 2px solid blue;
     }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /* Lines between each section */
 .section-line {
-    background-color: $button-color;
+  background-color: $button-color;
 
-    height: 0.7em;
-    width: 100%;
+  height: 0.7em;
+  width: 100%;
 }
 
 /* Big header with a section name */
 .section-announce {
-    background-color: $background-color-light;
+  background-color: $background-color-light;
 
-    height: fit-content;
-    padding: 1em;
+  height: fit-content;
+  padding: 1em;
 
-    h1 {
-        color: $text-color-on-light-bg;
+  h1 {
+    color: $text-color-on-light-bg;
 
-        font-size: 2em;
-        text-align: center;
-        
-        margin: 0px;
+    font-size: 2em;
+    text-align: center;
+
+    margin: 0px;
+  }
+
+  .icon {
+    img {
+      width: 2em;
+      height: 2em;
+      padding: 1em;
     }
 
-    .icon {
-        img {
-            width: 2em;
-            height: 2em;
-            padding: 1em;
-        }
+    .line {
+      background-color: $button-color;
 
-        .line {
-            background-color: $button-color;
-
-            height: 0.2em;
-            width: Min(30vw, 10em);
-        }
+      height: 0.2em;
+      width: Min(30vw, 10em);
     }
+  }
 }
 
 /* History of the barbershop section */
 .description {
-    background-color: $background-color-light;
+  background-color: $background-color-light;
 
-    
+  @media (min-width: $mediaBp1Width) {
+    display: grid;
+    grid: 1fr / repeat(2, Minmax(0, 1fr));
+  }
 
-    @media (min-width: $mediaBp1Width) {
-        display: grid;
-        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
-    }
+  @media (max-width: $mediaMinWidth) {
+    display: inline-block;
+  }
 
+  img {
     @media (max-width: $mediaMinWidth) {
-        display: inline-block;
+      height: auto;
     }
-    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    img {
+  .history {
+    color: $text-color-on-light-bg-transparent;
 
-        @media (max-width: $mediaMinWidth) {
-            height: auto;
-        }
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    line-height: 1.5em;
 
-    .history {
-        color: $text-color-on-light-bg-transparent;
-
-        line-height: 1.5em;
-        
-        margin: 2em Max(15vw, 7em);
-    }
+    margin: 2em Max(15vw, 7em);
+  }
 }
 
 /* Optional sidebar when pressed on 3 dots at the top of the page */
 .sidebar {
-    position: fixed;
+  position: fixed;
 
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 
-    top: 0;
-    right: -100vw;
-    height: 100vh;
-    min-width: 20vw;
+  top: 0;
+  right: -100vw;
+  height: 100vh;
+  min-width: 20vw;
 
-    .other-btns {
-        background-color: $background-color-light;
+  .other-btns {
+    background-color: $background-color-light;
 
-        gap: 2em;
-        
-        height: 100%;
-        width: 100%;
+    gap: 2em;
 
-        button {
-            background-color: $background-color-light;
+    height: 100%;
+    width: 100%;
 
-            border: 0px;
+    button {
+      background-color: $background-color-light;
 
-            font-size: 2em;
+      border: 0px;
 
-            cursor: pointer;
-        }
+      font-size: 2em;
+
+      cursor: pointer;
     }
+  }
 
-    .btn-close {
-        box-sizing: content-box;
+  .btn-close {
+    box-sizing: content-box;
 
-        height: 3em;
-        width: 3em;
-        margin: 1em;
-    }
-    
-    transition: all 0.3s;
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+  }
 
-    &.view {
-        right: 0;
-    }
+  transition: all 0.3s;
+
+  &.view {
+    right: 0;
+  }
 }
 
 /* Barbershop location section */
 .barbershops {
-    background-color: #554a3d;
+  background-color: #554a3d;
+
+  display: grid;
+
+  @media (min-width: $mediaBp1Width) {
+    grid: 1fr / repeat(2, Minmax(0, 1fr));
+  }
+
+  @media (max-width: $mediaBp1Width) {
+    grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+  }
+
+  img {
+    @media (max-width: $mediaBp1Width) {
+      grid-row: 1;
+    }
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contact {
+    color: $text-color-on-light-bg-transparent;
 
     display: grid;
 
     @media (min-width: $mediaBp1Width) {
-        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
+      grid: 0.5fr 3fr/1fr;
     }
 
     @media (max-width: $mediaBp1Width) {
-        grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+      grid: 0.5fr 1fr/1fr;
     }
 
-    img {
-        @media (max-width: $mediaBp1Width) {
-            grid-row: 1;
-        }
+    .information {
+      color: $text-color-on-dark-bg;
+      background-color: #554a3d;
 
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      display: grid;
+      grid: 1fr / repeat(3, 1fr);
+
+      padding: 2px;
+
+      .address,
+      .phone,
+      .hours {
+        font-size: 0.8em;
+
+        margin: 1em;
+        padding: 0.5em;
+
+        border: 1px solid $text-color-on-dark-bg;
+      }
     }
 
-    .contact {
-        color: $text-color-on-light-bg-transparent;
-
-        display: grid;
-
-        @media (min-width: $mediaBp1Width) {
-            grid: 0.5fr 3fr/1fr;
-        }
-    
-        @media (max-width: $mediaBp1Width) {
-            grid: 0.5fr 1fr/1fr;
-        }
-
-        .information {
-            color: $text-color-on-dark-bg;
-            background-color: #554a3d;
-
-            display: grid;
-            grid: 1fr / repeat(3, 1fr);
-
-            padding: 2px;
-
-            .address,
-            .phone,
-            .hours {
-                font-size: 0.8em;
-
-                margin: 1em;
-                padding: 0.5em;
-
-                border: 1px solid $text-color-on-dark-bg;;
-            }
-        }
-
-        a.map {
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.5), 
-                rgba(0, 0, 0, 0.5)
-            ), url('./images/map1.png') center;
-        }
-
-        a.map2 {
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.5), 
-                rgba(0, 0, 0, 0.5)
-            ), url('./images/map2.png') center;
-        }
+    a.map {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("./images/map1.png") center;
     }
+
+    a.map2 {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("./images/map2.png") center;
+    }
+  }
 }
 
 /* Price list section */
 .pricelist {
-    background-color: $background-color-light;
+  background-color: $background-color-light;
 
-    display: grid;
+  display: grid;
 
-    @media (min-width: $mediaBp1Width) {
-        grid: 1fr/ repeat(2, Minmax(0, 1fr));;
-    }
+  @media (min-width: $mediaBp1Width) {
+    grid: 1fr / repeat(2, Minmax(0, 1fr));
+  }
 
-    @media (max-width: $mediaMinWidth) {
-        grid: repeat(2, Minmax(0, 1fr)) / 1fr;
-    }
-    
+  @media (max-width: $mediaMinWidth) {
+    grid: repeat(2, Minmax(0, 1fr)) / 1fr;
+  }
 
-    h2 {
-        font-size: 1.3em;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  h2 {
+    font-size: 1.3em;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    tbody {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
+  tbody {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 
-    .prices {
-        color: $text-color-on-light-bg-transparent;
-        
-        justify-content: space-around;
+  .prices {
+    color: $text-color-on-light-bg-transparent;
 
-        line-height: 1.5em;
+    justify-content: space-around;
 
+    line-height: 1.5em;
+
+    margin: 0px 2em;
+
+    .price-row {
+      color: rgba(0, 0, 0, 0.678);
+
+      align-items: center;
+      justify-content: space-between;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+
+      text-align: left;
+      p {
         margin: 0px 2em;
-
-        .price-row {
-            color: rgba(0, 0, 0, 0.678);
-
-            align-items: center;
-            justify-content: space-between;
-
-            border-bottom: 1px solid rgba(0, 0, 0, 0.329);
-
-            text-align: left;
-            p {
-                margin: 0px 2em;
-            }
-        }
+      }
     }
+  }
 }
 
 /* Second prompt to book before end of the page */
 .book-prompt {
-    background-color: $background-color-light;
+  background-color: $background-color-light;
+
+  padding: 1em;
+
+  button {
+    background-color: $button-color;
 
     padding: 1em;
+    margin: 0em 2em;
 
-    button {
-        background-color: $button-color;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: inherit;
 
-        padding: 1em;
-        margin: 0em 2em;
+    box-shadow: none;
+    border: none;
+    border-radius: 0.4em;
+    outline: inherit;
 
-        font-size: 1.1em;
-        font-weight: bold;
-        font-family: inherit;
-
-        box-shadow: none;
-        border: none;
-        border-radius: 0.4em;
-        outline: inherit;
-
-        transition: background-color 0.1s ease-in;
-        &:hover {
-            background-color: $button-color-darker;
-            cursor:pointer;
-        }
-
-        &:focus {
-            border: 2px solid blue;
-        }
+    transition: background-color 0.1s ease-in;
+    &:hover {
+      background-color: $button-color-darker;
+      cursor: pointer;
     }
+
+    &:focus {
+      border: 2px solid blue;
+    }
+  }
 }
 
 /* Contact information section */
 .follow-us {
-    background-color: $background-color-dark;
+  background-color: $background-color-dark;
 
-    gap: 1em;
+  gap: 1em;
 
-    padding-top: 3em;
-    padding-bottom: 3em;
+  padding-top: 3em;
+  padding-bottom: 3em;
 
-    div:first-child {
-        font-size: 2.5em;
+  div:first-child {
+    font-size: 2.5em;
+  }
+
+  button {
+    margin-top: 1em;
+    width: 3em;
+    height: 3em;
+
+    img {
+      width: 100%;
+      height: 100%;
     }
-
-    button {
-        margin-top: 1em;
-        width: 3em;
-        height: 3em;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
+  }
 }
 
 /* Stylings for bottom-most part of website */
 footer {
-    color: $text-color-on-dark-bg;
-    background-color: $background-color-dark;
+  color: $text-color-on-dark-bg;
+  background-color: $background-color-dark;
 
-    display: flex;
-    justify-content: space-between;
-    
-    padding: 0px 1em;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0px 1em;
 }
