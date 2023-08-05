@@ -1,4 +1,4 @@
-# barbershop-project-landing
+# Landing page for barbershop project
 
 <a href="https://de.wikipedia.org/wiki/JavaScript">
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=yellow" />
